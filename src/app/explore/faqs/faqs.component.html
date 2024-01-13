@@ -1,0 +1,29 @@
+<div class="min-h-screen content">
+   <div class="faqs flex flex-col items-center justify-center text-white">
+        <h2 class="text-7xl font-semibold m-4">FAQs</h2>
+        <h3 class=" text-lg font-light">Frequently Asked Questions</h3>
+        <div class="faq-total-items m-8 text-white w-4/5 rounded-md flex flex-col gap-[5px] bg-slate-900">
+            <div class="faq-item" *ngFor="let item of faqItemsList">
+                <div class="question flex flex-row justify-between p-4 cursor-pointer" (click)="toggleItem(item)">
+                    <p>{{item.question}}</p>
+                    <svg *ngIf="!item.isExpanded;else collpaseIcon1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+                    </svg>
+                    <ng-template #collpaseIcon1>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+                        </svg>   
+                    </ng-template>                                         
+                </div>
+                <hr class="border-b-0 border-white">
+                <div *ngIf="item.isExpanded" class="answer bg-slate-700 p-4 justify-center">
+                    <p>
+                        {{item.answer}}
+                    </p>
+                </div>
+            </div>
+        </div>
+           
+    </div>
+</div>

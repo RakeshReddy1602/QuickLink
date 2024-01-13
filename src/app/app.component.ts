@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'URL_shortener';
+  label:string = "Sign In";
+  loginEnabled : boolean = true;
 }

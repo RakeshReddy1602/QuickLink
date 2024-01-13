@@ -1,0 +1,45 @@
+.content{
+    background: #1f3244;
+}
+a{
+    color: rgb(255, 255, 255);
+}
+a:active{
+    color: red;
+}
+a:hover{
+    color: rgb(225, 113, 225);
+}
+.text-xl {
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
+.mt-4 {
+    margin-top: 1rem/* 16px */;
+}
+.text-4xl {
+    font-size: 2.25rem/* 36px */;
+    line-height: 2.5rem/* 40px */;
+}
+div{
+    font-size: medium;
+    line-height: 1.5rem;
+}
+.mb-4 {
+    margin-bottom: 1rem/* 16px */;
+}
+@media (min-width: 768px) {
+    .md\:mx-4 {
+        margin-left: 1rem/* 16px */;
+        margin-right: 1rem/* 16px */;
+    }
+}
+@media (min-width: 768px) {
+    .md\:mx-12 {
+        margin-left: 3rem/* 48px */;
+        margin-right: 3rem/* 48px */;
+    }
+}
+.mt-8 {
+    margin-top: 2rem/* 32px */;
+}

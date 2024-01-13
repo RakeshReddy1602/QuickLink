@@ -1,0 +1,87 @@
+<div class="min-h-screen content flex-col">
+    <div class="flex flex-col md:flex-row gap-10 p-4 text-white">
+       <div>
+        <div class="caption">
+            <h2 class="font-semibold text-4xl font-serif mt-4 caption">
+                Empower Your Brand. Advertise with Precision.
+            </h2>
+        </div>
+        <div>
+            <ol class="list-disc ml-6 font-semibold text-xl">
+                <li>
+                    <p>Reach out to 2 million+ unique users</p>                      
+                </li>
+                <li>
+                    <p>Achieve higher conversions with better targeting</p>                      
+                </li>
+                <li>
+                    <p>Discover audience globally</p>                      
+                </li>
+                <li>
+                    <p>Publish your events on our wide Social media presence</p>                      
+                </li>
+            </ol>
+            <div class="flex justify-center">
+               <a (click)="goToContactForm()">
+                <button class="bg-red-600 text-2xl font-semibold p-2 border border-white rounded">Contact Us</button>
+               </a>
+            </div>
+        </div>
+       </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 benifit rounded-md">
+            <div class="flex flex-col grid-cell">
+                <img src="assets/advertise-speaker.png" alt="Image">
+                <h3 class="text-3xl font-semibold">Build brand awareness</h3>
+                <p>with <span class="font-bold">2 Million</span> + users</p>
+            </div>
+            <div class="flex flex-col grid-cell">
+                <img src="assets/advertise-graph.png" alt="Image">
+                <h3 class="text-3xl font-semibold">Higher Conversion</h3>
+                <p>Achieve higher conversion with<span class="font-bold"> 90% </span>Ads Viewability</p>
+            </div>
+            <div class="flex flex-col grid-cell">
+                <img src="assets/advertise-results.png" alt="Image">
+                <h3 class="text-3xl font-semibold">Long term results</h3>
+                <p>Achieve long term results with<span class="font-bold"> 90% </span>Organic Traffic</p>
+            </div>
+            <div class="flex flex-col grid-cell">
+                <img src="assets/advertise-leads.png" alt="Image">
+                <h3 class="text-3xl font-semibold">Generate Leads</h3>
+                <p>Generate lead with <span class="font-bold">1.5 Million</span> + logged users</p>
+            </div>
+        </div>
+    </div>
+    <div id="contactForm" class="p-4 mx-auto">
+        <h2 class="text-4xl font-bold text-white text-center">Contact Form</h2>
+        <form action="" [formGroup]="contactForm"  class="font-semibold text-black" >
+           <div class="grid grid-cols-1 md:grid-cols-2 text-white text-xl p-4 w-4/5 mx-auto">
+            <div class="flex flex-col m-4">
+                <label for="userName">Username <sup>*</sup></label>
+                <input type="text" id="userName" placeholder="Your Name" formControlName = "userName">
+            </div>
+            <div class="flex flex-col m-4">
+                <label for="email">Email  <sup>*</sup></label>
+                <input type="text" id="email" placeholder="Your email" formControlName = "email">
+            </div>
+            <div class="flex flex-col m-4">
+                <label for="mobile">Mobile Number  <sup>*</sup></label>
+                <input type="tel" id="mobile" placeholder="XXXXXXXXX" formControlName = "mobile">
+            </div>
+            <div class="flex flex-col m-4">
+                <label for="userReach">Estimated User Reach</label>
+                <input type="number" id="userReach" placeholder="999999999" formControlName = "userReach">
+            </div>
+            <div class="flex flex-col m-4">
+                <label for="company">Company Name (Optional)</label>
+                <input type="text" formControlName = "companyName">
+            </div>
+           </div>
+           <div class="flex flex-col items-center justify-center">
+            <p *ngIf="contactForm.touched && contactForm.invalid" class="text-red-500 font-bold">
+                Please fill the details correctly
+            </p>
+            <button (click)="onSubmit()" class="bg-white text-lg text-black cursor-pointer p-2 rounded max-w-fit">Submit</button>
+        </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="flex flex-col justify-center items-center min-h-screen">
+  <div class="flex flex-col items-center justify-center">
+    <figure>
+    <img src="assets/welcome-logo.png" alt="Company Logo" 
+    class="">
+    <figcaption class="font-semibold text-center mb-4 -mt-8">Welcome to QuickLink</figcaption>
+    </figure>
+  </div>
+<div *ngIf="showLoginForm"  id="signinForm">
+  <div class="bg-white p-8 rounded shadow-sm w-96 border border-blue-400 border-b-2">
+    <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
+  <form action="" [formGroup]="signInForm">
+      <div class="mb-4">
+      <label for="email" class="block text-gray-600 text-sm font-medium mb-2" >Email</label>
+      <input type="email" class="w-full border p-2 rounded hover:outline outline-blue-500" [(ngModel)] = "userEmail" formControlName="email">
+      <p *ngIf="!validEmail" class="text-red-600 font-semibold text-sm m-2" >Please Enter a valid email address</p>
+      <label for="password" class="block text-gray-600 text-sm font-medium mb-2">Password</label>
+      <input type="password" class="w-full border p-2 rounded hover:outline outline-blue-500" [(ngModel)] = "userPassword" formControlName="password">
+      <p *ngIf="!validPass" class="text-red-600 font-semibold text-sm m-2">Password must contain 8 characters and [A-Z],[a-z],[0-9] and one symbol</p>
+      <button class="bg-blue-500 text-white p-2 mt-4 rounded-md" (click)="validateUserLogin()">Sign In</button>
+      <p class="font-light text-sm mt-4">Don't have an account? <a href="#signupForm" class="text-blue-600 font-bold ml-1" (click)="toggleForm()">Sign Up</a></p>
+      </div>
+  </form>
+  </div>
+</div>
+
+<div *ngIf="!showLoginForm" id="signupForm">
+  <div class="bg-white p-8 rounded shadow-ms w-96 border border-blue-400 border-b-2">
+    <h2 class="text-2xl font-semibold mb-4">Sign Up</h2>
+  <form action="" [formGroup]="signUpForm">
+      <div class="mb-4">
+      <label for="email" class="block text-gray-600 text-sm font-medium mb-2">Email</label>
+      <input type="email" class="w-full border p-2 rounded hover:outline outline-blue-500" [(ngModel)] = "newUserEmail" formControlName="newEmail">
+      <p *ngIf="!validEmail" class="text-red-600 font-semibold text-sm m-2" >Please Enter a valid email address</p>
+      <label for="password" class="block text-gray-600 text-sm font-medium mb-2">Create Password</label>
+      <input type="password" class="w-full border p-2 rounded hover:outline outline-blue-500" [(ngModel)] = "newPassword" formControlName="newPassword">
+      <label for="password" class="block text-gray-600 text-sm font-medium mb-2">Confirm Password</label>
+      <input type="password" class="w-full border p-2 rounded hover:outline outline-blue-500" [(ngModel)] = "confirmPassword" formControlName="confirmPass">
+      <p *ngIf="!validPass" class="text-red-600 font-semibold text-sm m-2">Password must contain 8 characters and [A-Z],[a-z],[0-9] and one symbol and must be same</p>
+      <button class="bg-blue-500 text-white p-2 mt-4 rounded-md" (click)="validateUserSignUp()">Sign Up</button>
+      <p class="font-light text-sm mt-4">Already have an account? <a href="#signinForm" class="text-blue-600 font-bold ml-1" (click)="toggleForm()">Sign In</a></p>
+      </div>
+  </form>
+  </div>
+</div>
+</div>

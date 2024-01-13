@@ -1,0 +1,22 @@
+<div class="min-h-screen content text-white">
+    <div class="flex flex-col items-center justify-center mx-4">
+        <h2 class="mt-4 font-bold text-4xl">URL Shortener Alternatives</h2>
+        <p class="text-left mt-8">
+            A list of some of the best URL shortener's as alternatives to <span class="font-bold italic">QuickLink</span>.
+            We'll be as objective as possible and provide you with the most up to date
+            and accurate data on each service to aid in your research. In this section,
+            we'll cover Bitly, Bitly Enterprise, TinyURL, Yourls, 
+            PixelMe, and Clickim URL shortener.
+        </p>
+    </div>
+    <p class="font-bold text-xl text-left  mb-4 md:mx-4">Alternatives List :</p>
+    <div class="flex flex-col items-start justify-start">
+        <ul class="md:mx-12 items-start">
+            <li *ngFor="let alt of alernativeList" class="mt-0 mb-4">
+              <div class="flex flex-row">
+               <a href="{{'https://'+alt.domainUrl}}" target="_blank">{{alt.domainName}}</a>
+              </div>
+            </li>
+        </ul>
+    </div>
+</div>
