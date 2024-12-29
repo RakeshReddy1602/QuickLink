@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UrlShortenServiceService {
 
-  private apiKey = '096e8bfedd4f4855a35bbc887917fd78';
+  private apiKey = 'MY_API_KEY_HERE';
   private apiUrl = 'https://api.rebrandly.com/v1/links';
   constructor(private http:HttpClient) { }
 
